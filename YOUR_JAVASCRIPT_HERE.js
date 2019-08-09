@@ -90,6 +90,7 @@ function equipWeapon(character, item) {
 function fightEnemy(character, enemy) {
     performAttack(character, enemy)
     if (!enemy.health) {
+        addEvent(`${enemy.name} dropped their ${enemy.loot}. Shiny loot!`)
         document.getElementById(enemy.image).classList.add("hidden")
         document.getElementById(enemy.loot).classList.remove("hidden")
 
@@ -162,6 +163,20 @@ function displayStats() {
     else {
         document.getElementById("heroInventory").innerText = "Empty inventory."
     }
+}
+
+function renameHero() {
+    const name = document.getElementById("nameInput").value.trim()
+    if (!name) {
+        alert("Please enter a name for your hero!")
+        return
+    }
+    addEvent(`${hero.name} is now known as ${name}.`)
+    hero.name = name
+    displayStats()
+    document.getElementById("nameLabel").classList.add("hidden")
+    document.getElementById("nameInput").classList.add("hidden")
+    document.getElementById("nameButton").classList.add("hidden")
 }
 
 addEvent(`${hero.name} goes on a grand adventure!`)
