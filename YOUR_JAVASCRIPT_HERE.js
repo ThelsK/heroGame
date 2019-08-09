@@ -24,6 +24,7 @@ function rest(character) {
 
 function pickUpItem(character, item) {
     character.inventory.push(item)
+    document.getElementById(item.type).classList.add("hidden")
     if (item.damage) {
         addEvent(`${character.name} picks up a ${item.type} (${character.weapon.damage} damage).`)
     }
@@ -35,7 +36,9 @@ function pickUpItem(character, item) {
 
 function equipWeapon(character, item) {
     if (character.inventory[0] && character.weapon != character.inventory[0]) {
+        character.inventory.push(character.weapon)
         character.weapon = character.inventory[0]
+        character.inventory.shift()
         addEvent(`${character.name} equips a ${character.weapon.type} (${character.weapon.damage} damage).`)
         displayStats()
     }
