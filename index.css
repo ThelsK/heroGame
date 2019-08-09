@@ -1,0 +1,9 @@
+.heroIcons {
+    display: flex;
+    flex-direction: row;
+}
+
+.heroIcon {
+    height: 8rem;
+    margin: 1rem;
+}

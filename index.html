@@ -1,24 +1,35 @@
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <title>Mocha Tests</title>
-    <link href="lib/mocha.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link href="lib/mocha.css" rel="stylesheet" />
+  <link href="index.css" rel="stylesheet" />
 </head>
+
 <body>
 
 
   <!-- 👍 YOUR HTML HERE 👍 -->
-  <img id="inn" onclick="rest(hero)"></img>
-  <img id="dagger" onclick="pickUpItem(hero, {type: 'dagger', damage: 2})"></img>
-  <img id="bag" onclick="equipWeapon(hero)"></img>
-
+  <div class="heroIcons">
+    <img class="heroIcon" id="inn" alt="inn" src="inn.png" onclick="rest(hero)"></img>
+    <img class="heroIcon" id="dagger" alt="dagger" src="dagger.png" onclick="pickUpItem(hero, {type: 'dagger', damage: 2})"></img>
+    <img class="heroIcon" id="bag" alt="bag" src="bag.png" onclick="equipWeapon(hero)"></img>
+  </div>
+  <div class="heroStats">
+    <h1 id="heroName"></h1>
+    <p id="heroHealth"></p>
+    <p id="heroWeapon"></p>
+    <p id="heroInventory"></p>
+    <p id="eventList"></p>
+  </div>
 
 
   <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
   <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
 
   <div id="mocha">
-  <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
+    <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
   </div>
 
   <script src="lib/chai.js"></script>
@@ -29,4 +40,5 @@
   <script src="lib/game_logic.test.js"></script>
 
 </body>
+
 </html>
