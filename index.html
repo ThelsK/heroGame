@@ -1,21 +1,48 @@
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <title>Mocha Tests</title>
-    <link href="lib/mocha.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link href="lib/mocha.css" rel="stylesheet" />
+  <link href="index.css" rel="stylesheet" />
 </head>
+
 <body>
 
 
   <!-- 👍 YOUR HTML HERE 👍 -->
-
-
+  <div class="heroIcons">
+    <img class="heroIcon hidden" id="grave" alt="grave" src="images/grave.png" onclick="grave(hero)"></img>
+    <img class="heroIcon" id="inn" alt="inn" src="images/inn.png" onclick="rest(hero)"></img>
+    <img class="heroIcon" id="bag" alt="bag" src="images/bag.png" onclick="equipWeapon(hero)"></img>
+    <img class="heroIcon" id="dagger" alt="dagger" src="images/dagger.png"
+      onclick="pickUpImage(hero, {type: 'dagger', damage: 2})"></img>
+    <img class="heroIcon" id="goblin" alt="goblin" src="images/goblin.png" onclick="fightEnemy(hero, goblin)"></img>
+    <img class="heroIcon hidden" id="axe" alt="axe" src="images/axe.png"
+      onclick="pickUpImage(hero, {type: 'axe', damage: 6})"></img>
+    <img class="heroIcon" id="ogre" alt="ogre" src="images/ogre.png" onclick="fightEnemy(hero, ogre)"></img>
+    <img class="heroIcon hidden" id="treasure" alt="treasure" src="images/treasure.png"
+      onclick="pickUpImage(hero, {type: 'treasure', damage: 1})"></img>
+  </div>
+  <div class="heroStats">
+    <h1 id="heroName" class="heroText"></h1>
+    <p id="heroHealth" class="heroText"></p>
+    <p id="heroWeapon" class="heroText"></p>
+    <p id="heroInventory" class="heroText"></p>
+    <p id="eventList" class="heroText"></p>
+  </div>
+  <div class="renameHero">
+    <p id="nameLabel">Enter hero name:</p>
+    <input id="nameInput" type="text"></input>
+  </div>
+  <button id="nameButton" onclick="renameHero()">Rename hero!</button>
+  <button onclick="location.reload()">Restart game!</button>
 
   <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
   <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>
 
   <div id="mocha">
-  <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
+    <!-- MOCHA TEST FEEDBACK WILL BE RENDERED HERE -->
   </div>
 
   <script src="lib/chai.js"></script>
@@ -26,4 +53,5 @@
   <script src="lib/game_logic.test.js"></script>
 
 </body>
+
 </html>

@@ -1,0 +1,27 @@
+.heroIcons {
+    display: flex;
+    flex-direction: row;
+}
+
+.heroIcon {
+    height: 8rem;
+    margin: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.heroText {
+    max-height: 10rem;
+    overflow-y: auto;
+    width: 30rem;
+    margin: 1rem;
+}
+
+.renameHero {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem;
+}
