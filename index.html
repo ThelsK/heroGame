@@ -12,18 +12,23 @@
 
   <!-- 👍 YOUR HTML HERE 👍 -->
   <div class="heroIcons">
+    <img class="heroIcon hidden" id="grave" alt="grave" src="grave.png" onclick="grave(hero)"></img>
     <img class="heroIcon" id="inn" alt="inn" src="inn.png" onclick="rest(hero)"></img>
     <img class="heroIcon" id="bag" alt="bag" src="bag.png" onclick="equipWeapon(hero)"></img>
-    <img class="heroIcon" id="dagger" alt="dagger" src="dagger.png" onclick="pickUpItem(hero, {type: 'dagger', damage: 2})"></img>
+    <img class="heroIcon" id="dagger" alt="dagger" src="dagger.png" onclick="pickUpImage(hero, {type: 'dagger', damage: 2})"></img>
+    <img class="heroIcon" id="goblin" alt="goblin" src="goblin.png" onclick="fightEnemy(hero, goblin)"></img>
+    <img class="heroIcon hidden" id="axe" alt="axe" src="axe.png" onclick="pickUpImage(hero, {type: 'axe', damage: 6})"></img>
+    <img class="heroIcon" id="ogre" alt="ogre" src="ogre.png" onclick="fightEnemy(hero, ogre)"></img>
+    <img class="heroIcon hidden" id="treasure" alt="treasure" src="treasure.png" onclick="pickUpImage(hero, {type: 'treasure', damage: 1})"></img>
   </div>
   <div class="heroStats">
-    <h1 id="heroName"></h1>
-    <p id="heroHealth"></p>
-    <p id="heroWeapon"></p>
-    <p id="heroInventory"></p>
-    <p id="eventList"></p>
+    <h1 id="heroName" class="heroText"></h1>
+    <p id="heroHealth" class="heroText"></p>
+    <p id="heroWeapon" class="heroText"></p>
+    <p id="heroInventory" class="heroText"></p>
+    <p id="eventList" class="heroText"></p>
   </div>
-
+  <button onclick="location.reload()">Restart the game!</button>
 
   <!-- I RECOMMEND YOU LEAVE THE REST UNTOUCHED -->
   <button onclick="mocha.checkLeaks(); mocha.run();">Run the tests!</button>

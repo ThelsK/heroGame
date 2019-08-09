@@ -11,3 +11,10 @@
 .hidden {
     display: none;
 }
+
+.heroText {
+    max-height: 10rem;
+    overflow-y: auto;
+    width: 30rem;
+    margin: 1rem;
+}
